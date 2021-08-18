@@ -1,11 +1,11 @@
 # Java Junior Developer Training Course.
 88 hours training + 32 hours work project = 120 hr.
 
----
 
 Записи
 ======
 - [16.08](https://us02web.zoom.us/rec/share/-ecIdA3pG3BZ9g5VzFpxoolxUXQ-AaG9LExlw6_6AQ0BaTrPUWx3j1M3Mp3IqBkw.fIAGyXc45YjAbGv2)
+- [17.08](https://us02web.zoom.us/rec/share/pYNHtwTAGuSQVS4PWLLVhHiCbFEb10Ua8APz-7xcTVjFtPsjxbhld1VHxUWoqd_I.ri626dL6BYXr84L8)
 
 # Introduction to Java and Java Technology (*1* hour theory / *including 0.5* hour practice)
 - Introduction to Java. Benefits.
@@ -57,12 +57,7 @@ Hello, world!
 - Fork this [repo](https://github.com/eugene-krivosheyev/java-junior) to your account
 - Clone your fork repo locally
 - Update README.md locally to your teammates names
-- Commit and push initial commit
-```
-$ git add .
-$ git commit -m “…”
-$ git push
-```
+- Commit and push initial commit with IDEA
 
 ### DoD
 - Trainer see all the forks in github
