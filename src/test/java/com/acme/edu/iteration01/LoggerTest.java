@@ -2,21 +2,25 @@ package com.acme.edu.iteration01;
 
 import com.acme.edu.Logger;
 import com.acme.edu.SysoutCaptureAndAssertionAbility;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.io.*;
 
+import static java.lang.System.lineSeparator;
+
 public class LoggerTest implements SysoutCaptureAndAssertionAbility {
+    public static final String PRIMITIVE_PREFIX = "primitive:";
+
     //region given
-    @Before
+    @BeforeEach
     public void setUpSystemOut() throws IOException {
         resetOut();
         captureSysout();
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         resetOut();
     }
@@ -31,8 +35,10 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         //endregion
 
         //region then
-        assertSysoutContains("primitive: ");
-        assertSysoutEquals("primitive: 1\nprimitive: 0\nprimitive: -1\n");
+        assertSysoutContains(PRIMITIVE_PREFIX + " ");
+
+        String s = lineSeparator();
+        assertSysoutEquals(PRIMITIVE_PREFIX + " 1" + s + PRIMITIVE_PREFIX + " 0\nprimitive: -1\n");
         //endregion
     }
 
@@ -45,15 +51,19 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         //endregion
 
         //region then
-        assertSysoutContains("primitive: ");
-        assertSysoutContains("1");
-        assertSysoutContains("0");
-        assertSysoutContains("-1");
+        assertSysoutContains(PRIMITIVE_PREFIX + " ");
+        extracted("1", "0", "-1");
         //endregion
     }
 
-    /*
-    TODO: implement Logger solution to match specification as tests
+    private void extracted(String s, String s2, String s3) {
+        assertSysoutContains(s);
+        assertSysoutContains(s2);
+        assertSysoutContains(s3);
+    }
+
+
+    //TODO: implement Logger solution to match specification as tests
 
     @Test
     public void shouldLogChar() throws IOException {
@@ -63,9 +73,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         //endregion
 
         //region then
-        assertSysoutContains("char: ");
-        assertSysoutContains("a");
-        assertSysoutContains("b");
+        extracted("char: ", "a", "b");
         //endregion
     }
 
@@ -77,12 +85,11 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         //endregion
 
         //region then
-        assertSysoutContains("string: ");
-        assertSysoutContains("test string 1");
-        assertSysoutContains("other str");
+        extracted("string: ", "test string 1", "other str");
         //endregion
     }
 
+    /*
     @Test
     public void shouldLogBoolean() throws IOException {
         //region when
@@ -91,9 +98,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         //endregion
 
         //region then
-        assertSysoutContains("primitive: ");
-        assertSysoutContains("true");
-        assertSysoutContains("false");
+        extracted(PRIMITIVE_PREFIX + " ", "true", "false");
         //endregion
     }
 

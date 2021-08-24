@@ -2,21 +2,20 @@ package com.acme.edu.iteration02;
 
 import com.acme.edu.Logger;
 import com.acme.edu.SysoutCaptureAndAssertionAbility;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 
 import java.io.IOException;
 
 public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     //region given
-    @Before
+    @BeforeEach
     public void setUpSystemOut() throws IOException {
         resetOut();
         captureSysout();
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         resetOut();
     }
@@ -33,7 +32,9 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         Logger.log(1);
         Logger.log(2);
         Logger.log("str 2");
-        Logger.log(0);
+        Logger.log(0,??????);
+        Logger.close()
+        Logger.flush()
         //endregion
 
         //region then
@@ -50,8 +51,9 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     public void shouldLogCorrectlyIntegerOverflowWhenSequentIntegers() {
         //region when
         Logger.log("str 1");
-        Logger.log(10);
-        Logger.log(Integer.MAX_VALUE);
+        Logger.log(Integer.MAX_VALUE / 2);
+        Logger.log(Integer.MAX_VALUE / 2);
+        Logger.log(1);
         Logger.log("str 2");
         Logger.log(0);
         //endregion
@@ -59,7 +61,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         //region then
         assertSysoutEquals(
             "str 1\n" +
-            "10\n" +
+            "1"
             Integer.MAX_VALUE + "\n" +
             "str 2\n" +
             "0\n"
@@ -68,6 +70,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     }
 
     @Test
+    @Disable
     public void shouldLogCorrectlyByteOverflowWhenSequentBytes() {
         //region when
         Logger.log("str 1");
