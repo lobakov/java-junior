@@ -4,12 +4,14 @@ import com.acme.edu.Logger;
 import com.acme.edu.SysoutCaptureAndAssertionAbility;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
 
 import static java.lang.System.lineSeparator;
 
+@Disabled
 public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     public static final String PRIMITIVE_PREFIX = "primitive:";
 
@@ -35,7 +37,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         //endregion
 
         //region then
-        assertSysoutContains(PRIMITIVE_PREFIX + " ");
+        this.assertSysoutContains(PRIMITIVE_PREFIX + " ");
 
         String s = lineSeparator();
         assertSysoutEquals(PRIMITIVE_PREFIX + " 1" + s + PRIMITIVE_PREFIX + " 0\nprimitive: -1\n");
