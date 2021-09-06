@@ -13,6 +13,12 @@
 - [24.08](https://us02web.zoom.us/rec/share/FTrOI6EHZRHXJBRHCMamzjgGGPwivoIorQjrOe5PWIxPbu2BoWF1U0ApijFSFmds.Q2UKnW-CWx-dt8yo)
 - [25.08](https://us02web.zoom.us/rec/share/KZoxYSs17_aFJpFhGvpR1YMw2DHokb-jvfXPIpt1EXl8lk9-b7S_EAnSCe8onz2w.Y7fJx97wqHc2PznN)
 - [26.08](https://us02web.zoom.us/rec/share/5hPVCFZITDfZOiVstd7ooEU4qsVbuWy4pKXPzbib1NzwdCSGeQBz94bp91FW-zH9.MHw5uznhqMfKlP-g)
+- [27.08](https://us02web.zoom.us/rec/share/zbkeDNFl2ekZFaAHVsoONwSDSX6eGs5N4-IeJD4qa8-4gsezVBJRYLQt3XND6A0k.1uBxSq0DOAc2MuN9)
+- [30.08](https://us02web.zoom.us/rec/share/Z2aTm9ZbQiIh_I1oVV2RHeWqZPeoZrZhe2p3MqVt1DZTL2TmalwoBLA6q74DMaW_.eut6nbWbnD5RDpld)
+- [31.08](https://us02web.zoom.us/rec/share/EI1UGGrM15vpT5Q36sFhGfvkbh-Ul34tPbErVvaei7kSxvRSNzZYAVxqLZqnklG2.upWMNYHEuSuy3iZV)
+- [01.09](https://us02web.zoom.us/rec/share/HeaR51vJ_BBjNn1RwjnYc-OeXTyaXidb_E4ek_Sh9gLYBifaFsSLdNxVaCz8OhD0.QK4UVSz8gebgLHTr)
+- [02.09](https://us02web.zoom.us/rec/share/A0-ttbMMhc-dgGyDvBWL9c3pTnbxG3-pj5fQOqPyMMRGDuHbDQRElX8Dc_aI0ICW.5Uyus0_fpJT8SQk_)
+- [03.09](https://us02web.zoom.us/rec/share/a7PEqWaC-lOGLZtG3aw3uIP0uNtqYwXSaeI5tVf8cdJ9iuwYsa2ktx71n77nzR1Z.04We-04jIgKdyPNA)
 
 # Introduction to Java and Java Technology (*1* hour theory / *including 0.5* hour practice)
 - Introduction to Java. Benefits.

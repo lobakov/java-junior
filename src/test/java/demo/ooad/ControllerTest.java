@@ -3,6 +3,7 @@ package demo.ooad;
 
 import demo.ooad.controller.LoggerController;
 import demo.ooad.dao.ConsoleSaver;
+import demo.ooad.dao.SaveException;
 import demo.ooad.dao.Saver;
 import demo.ooad.domain.Message;
 import demo.ooad.domain.SeverityLevel;
@@ -10,9 +11,7 @@ import demo.ooad.filter.Filter;
 import demo.ooad.filter.LengthFilter;
 import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.ArgumentMatchers.any;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 /**
@@ -25,6 +24,8 @@ public class ControllerTest {
      * - pre-conditions: system state + input values
      * - post-conditions: system state + output values
      */
+
+
     @Test
     public void shouldGetErrorWhenMessageBodyNotExists() {
         //region Fixture | Arrange | Given
@@ -58,7 +59,7 @@ public class ControllerTest {
     }
 
     @Test //@DisplayName //@Disabled
-    public void shouldSaveWhenMessageNotFiltered() {
+    public void shouldSaveWhenMessageNotFiltered() throws SaveException {
         //Given
         Saver saverMock = mock(Saver.class);
         Filter filterStub = mock(Filter.class);
@@ -69,9 +70,23 @@ public class ControllerTest {
         //When
         Message messageStub = mock(Message.class);
         when(messageStub.getBody()).thenReturn("stub body");
-        sutController.log(messageStub);
 
         //Then
-        verify(saverMock, times(1)).save(messageStub);
+        verify(saverMock, times(1)).save(any());
+    }
+
+    @Test
+    public void stubShouldHoldState() {
+        Object stubObject = mock(Object.class);
+        when(stubObject.toString())
+                .thenReturn("1")
+                .thenReturn("2")
+                .thenReturn("3");
+
+        assertEquals("1", stubObject.toString());
+        assertEquals("2", stubObject.toString());
+        assertEquals("3", stubObject.toString());
+
+//        verify(mock, times(1)).write(anyString());
     }
 }
